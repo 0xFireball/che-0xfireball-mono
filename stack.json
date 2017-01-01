@@ -26,7 +26,7 @@
         "machines": {
           "dev-machine": {
             "attributes": {
-              "memoryLimitBytes": "2147483648"
+              "memoryLimitBytes": 3221225472
             },
             "servers": {},
             "agents": [
@@ -38,7 +38,7 @@
         },
         "recipe": {
           "type": "compose",
-          "content": "services:\n dev-machine:\n  image: 0xfireball/che-0xfireball-mono\n",
+          "content": "services:\n  dev-machine:\n    image: 0xfireball/che-0xfireball-mono\n",
           "contentType": "application/x-yaml"
         }
       }
