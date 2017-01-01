@@ -1,52 +1,55 @@
 {
   "name": "0xfireball-mono",
-  "description": "0xFireball's mono/c# Stack",
-  "scope": "general",
+  "source": {
+    "origin": "0xfireball/che-0xfireball-mono",
+    "type": "image"
+  },
+  "components": [
+    {
+      "version": "latest",
+      "name": "Mono"
+    },
+    {
+      "version": "---",
+      "name": "x11"
+    }
+  ],
   "tags": [
     "mono",
     "x11",
     "blackbox"
   ],
-  "components": [
-    {
-      "name": "Mono",
-      "version": "latest"
-    },
-    {
-      "name": "x11",
-      "version": "---"
-    }
-  ],
-  "source": {
-    "type": "image",
-    "origin": "codenvy/ubuntu_jdk8"
-  },
+  "id": "stacknvr40t9cirnds121",
   "workspaceConfig": {
     "environments": {
       "default": {
         "machines": {
           "dev-machine": {
+            "attributes": {
+              "memoryLimitBytes": "2147483648"
+            },
+            "servers": {},
             "agents": [
               "org.eclipse.che.terminal",
               "org.eclipse.che.ws-agent",
               "org.eclipse.che.ssh"
-            ],
-            "servers": {},
-            "attributes": {
-              "memoryLimitBytes": "2147483648"
-            }
+            ]
           }
         },
         "recipe": {
-          "content": "services:\n dev-machine:\n  image: codenvy/ubuntu_jdk8\n",
-          "contentType": "application/x-yaml",
-          "type": "compose"
+          "type": "compose",
+          "content": "services:\n dev-machine:\n  image: 0xfireball/che-0xfireball-mono\n",
+          "contentType": "application/x-yaml"
         }
       }
     },
-    "name": "default",
     "defaultEnv": "default",
-    "description": null,
-    "commands": []
-  }
+    "projects": [],
+    "name": "default",
+    "commands": [],
+    "links": []
+  },
+  "description": "0xFireball's mono/c# Stack",
+  "creator": "usergwgl49rhfh6k1y5o",
+  "scope": "general"
 }
